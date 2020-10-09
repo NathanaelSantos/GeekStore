@@ -56,7 +56,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
               onPressed: () {}),
           IconButton(
               icon: Icon(
-                Icons.shopping_cart,
+                Icons.shopping_bag,
                 color: Colors.white,
               ),
               onPressed: () {})

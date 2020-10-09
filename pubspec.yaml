@@ -75,8 +75,12 @@ flutter:
    - images/img7.png
    - images/img8.png
    - images/games.png
-  
-
+   - images/vestuario.png
+   - images/sneakers.png
+   - images/headphones.png
+   - images/sword.png
+   
+   
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
