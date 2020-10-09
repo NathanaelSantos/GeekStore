@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'componets/horizontal_listview.dart';
 import 'drawer/drawer_widget.dart';
 import 'home_controller.dart';
 
@@ -63,7 +64,23 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
       ),
       drawer: DrawerWidget(),
       body: new ListView(
-        children: <Widget>[image_carousel],
+        children: <Widget>[
+          image_carousel,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              child: Text(
+                'Categories',
+                style: TextStyle(
+                  color: Color.fromARGB(241, 255, 000, 065),
+                ),
+              ),
+              alignment: Alignment.center,
+            ),
+          ),
+          //Horizontal list view begins here
+          HorizontalList(),
+        ],
       ),
     );
   }

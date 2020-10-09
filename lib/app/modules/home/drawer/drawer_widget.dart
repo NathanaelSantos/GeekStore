@@ -84,7 +84,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               title: Text('About'),
               leading: Icon(
                 Icons.help,
-                color: Colors.red,
+                color: Color.fromARGB(241, 255, 000, 065),
               ),
             ),
           ),
@@ -94,7 +94,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               title: Text('Logout'),
               leading: Icon(
                 Icons.exit_to_app,
-                color: Colors.red,
+                color: Color.fromARGB(241, 255, 000, 065),
               ),
             ),
           ),
