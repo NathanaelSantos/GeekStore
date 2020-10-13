@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:geekShopping/app/modules/drawer/drawer_widget.dart';
 import 'componets/horizontal_listview.dart';
-import 'drawer/drawer_widget.dart';
 import 'home_controller.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,12 +12,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends ModularState<HomePage, HomeController> {
-  //use 'controller' variable to access controller
+  //use 'controller' variable to access controller\\
 
   @override
   Widget build(BuildContext context) {
-    Widget image_carousel = Container(
-      height: 200.0,
+    Widget makeImageCarousel = Container(
+      height: 150.0,
       child: Carousel(
         borderRadius: true,
         boxFit: BoxFit.cover,
@@ -43,6 +43,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
           241, 255, 000, 065), //or set color with: Color(0xFF0000FF)
     ));
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0.0,
         title: const Text('GeekStore'),
@@ -65,14 +66,15 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
       drawer: DrawerWidget(),
       body: new ListView(
         children: <Widget>[
-          image_carousel,
+          makeImageCarousel,
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(0.0),
             child: Container(
+              color: Color.fromARGB(241, 255, 000, 065),
               child: Text(
                 'Categories',
                 style: TextStyle(
-                  color: Color.fromARGB(241, 255, 000, 065),
+                  color: Colors.white,
                 ),
               ),
               alignment: Alignment.center,
@@ -80,6 +82,15 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
           ),
           //Horizontal list view begins here
           HorizontalList(),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              'Recent products',
+              style: TextStyle(
+                color: Color.fromARGB(241, 255, 000, 065),
+              ),         
+            ),
+          ),
         ],
       ),
     );

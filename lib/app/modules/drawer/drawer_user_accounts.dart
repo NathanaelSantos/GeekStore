@@ -6,7 +6,6 @@ class UserAccountsDrawer extends StatefulWidget {
 }
 
 class _DrawerWidgetState extends State<UserAccountsDrawer> {
-  
   //Creates the avatar with name, email and image
   @override
   Widget build(BuildContext context) {
@@ -29,7 +28,7 @@ class _DrawerWidgetState extends State<UserAccountsDrawer> {
       decoration: BoxDecoration(
         color: Color.fromARGB(241, 255, 000, 065),
         borderRadius: BorderRadius.only(
-          bottomRight: Radius.circular(80.0),       
+          bottomRight: Radius.circular(80.0),
         ),
       ),
     );
