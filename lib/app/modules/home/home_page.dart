@@ -1,3 +1,6 @@
+import 'dart:typed_data';
+
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -14,10 +17,36 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends ModularState<HomePage, HomeController> {
   //use 'controller' variable to access controller\\
 
+  final FirebaseStorage storage =
+      FirebaseStorage(
+        storageBucket: 'gs://appgeekstore.appspot.com');
+
+  Uint8List imageBytes;
+  String errorMsg;
+
+  _HomePageState() {
+    storage
+        .ref()
+        .child('Images/img_1.png')
+        .getData(10000000)
+        .then((data) => setState(() {
+              imageBytes = data;
+            }))
+        .catchError((e) => setState(() {
+              errorMsg = e.error;
+            }));
+  }
+
   @override
   Widget build(BuildContext context) {
+    var img = imageBytes != null
+        ? Image.memory(
+            imageBytes,
+            fit: BoxFit.cover,
+          )
+        : Text(errorMsg != null ? errorMsg : "Loading...");
     Widget makeImageCarousel = Container(
-      height: 150.0,
+      height: 180.0,
       child: Carousel(
         borderRadius: true,
         boxFit: BoxFit.cover,
@@ -29,7 +58,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
           AssetImage('images/img5.png'),
           AssetImage('images/img6.png'),
           AssetImage('images/img7.png'),
-          AssetImage('images/img8.png'),
+          AssetImage('images/img8.png'),     
         ],
         autoplay: true,
         animationDuration: Duration(milliseconds: 2500),
@@ -50,12 +79,14 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         backgroundColor: Color.fromARGB(241, 255, 000, 065),
         actions: <Widget>[
           IconButton(
+              splashRadius: 22,
               icon: Icon(
                 Icons.search,
                 color: Colors.white,
               ),
               onPressed: () {}),
           IconButton(
+              splashRadius: 22,
               icon: Icon(
                 Icons.shopping_bag,
                 color: Colors.white,
@@ -88,7 +119,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
               'Recent products',
               style: TextStyle(
                 color: Color.fromARGB(241, 255, 000, 065),
-              ),         
+              ),
             ),
           ),
         ],

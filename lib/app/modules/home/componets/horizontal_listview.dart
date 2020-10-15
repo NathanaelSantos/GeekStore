@@ -10,8 +10,8 @@ class HorizontalList extends StatelessWidget {
         decoration: new BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
-              topLeft: const Radius.circular(50.0),
-              topRight: const Radius.circular(50.0),
+              topLeft: const Radius.circular(40.0),
+              topRight: const Radius.circular(40.0),
             )),
         child: ListView(
           scrollDirection: Axis.horizontal,
@@ -30,7 +30,7 @@ class HorizontalList extends StatelessWidget {
             ),
             Category(
               image_location: 'images/headphones.png',
-              image_subtitle: 'Headphone',
+              image_subtitle: 'Accessories',
             ),
             Category(
               image_location: 'images/sword.png',
@@ -71,8 +71,7 @@ class Category extends StatelessWidget {
               child: Text(
                 image_subtitle,
                 style: TextStyle(
-                    color: Color.fromARGB(241, 255, 000, 065), 
-                    fontSize: 11.3),
+                    color: Color.fromARGB(241, 255, 000, 065), fontSize: 10),
               ),
             ),
           ),

@@ -8,9 +8,10 @@ class DrawerWidget extends StatefulWidget {
 }
 
 class _DrawerWidgetState extends State<DrawerWidget> {
+  Color color;
+
   @override
   Widget build(BuildContext context) {
-    
     //returns a listview with the menu items
     return Drawer(
       child: ListView(
@@ -18,6 +19,12 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         children: <Widget>[
           UserAccountsDrawer(),
           InkWell(
+            borderRadius: BorderRadius.only(
+              topLeft: const Radius.circular(60.0),
+              topRight: const Radius.circular(60.0),
+              bottomLeft: const Radius.circular(60.0),
+              bottomRight: const Radius.circular(60.0),
+            ),
             onTap: () {},
             child: ListTile(
               title: Text('Home page'),
