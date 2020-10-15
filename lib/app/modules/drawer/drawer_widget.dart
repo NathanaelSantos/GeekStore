@@ -19,12 +19,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         children: <Widget>[
           UserAccountsDrawer(),
           InkWell(
-            borderRadius: BorderRadius.only(
-              topLeft: const Radius.circular(60.0),
-              topRight: const Radius.circular(60.0),
-              bottomLeft: const Radius.circular(60.0),
-              bottomRight: const Radius.circular(60.0),
-            ),
+            borderRadius: _getBorderRadius(),
             onTap: () {},
             child: ListTile(
               title: Text('Home page'),
@@ -35,6 +30,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             ),
           ),
           InkWell(
+            borderRadius: _getBorderRadius(),
             onTap: () {},
             child: ListTile(
               title: Text('My accont'),
@@ -45,6 +41,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             ),
           ),
           InkWell(
+            borderRadius: _getBorderRadius(),
             onTap: () {},
             child: ListTile(
               title: Text('My orders'),
@@ -55,6 +52,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             ),
           ),
           InkWell(
+            borderRadius: _getBorderRadius(),
             onTap: () {},
             child: ListTile(
               title: Text('Categoris'),
@@ -65,6 +63,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             ),
           ),
           InkWell(
+            borderRadius: _getBorderRadius(),
             onTap: () {},
             child: ListTile(
               title: Text('Favourites'),
@@ -76,6 +75,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           ),
           Divider(),
           InkWell(
+            borderRadius: _getBorderRadius(),
             onTap: () {},
             child: ListTile(
               title: Text('Settings'),
@@ -86,6 +86,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             ),
           ),
           InkWell(
+            borderRadius: _getBorderRadius(),
             onTap: () {},
             child: ListTile(
               title: Text('About'),
@@ -96,6 +97,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             ),
           ),
           InkWell(
+            borderRadius: _getBorderRadius(),
             onTap: () {},
             child: ListTile(
               title: Text('Logout'),
@@ -107,6 +109,15 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           ),
         ],
       ),
+    );
+  }
+
+  BorderRadius _getBorderRadius() {
+    return BorderRadius.only(
+      topLeft: const Radius.circular(60.0),
+      topRight: const Radius.circular(60.0),
+      bottomLeft: const Radius.circular(60.0),
+      bottomRight: const Radius.circular(60.0),
     );
   }
 }

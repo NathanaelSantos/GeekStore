@@ -9,22 +9,28 @@ class _ProductsState extends State<Products> {
   var product_list = [
     {
       "Name": "Batman",
-      "Picture": "images/products/imgProduct.jpg",
+      "pro_picture": "images/products/imgProduct.jpg",
       "Old_price": 100,
       "Price": 79,
     },
     {
       "Name": "Deadpool",
-      "Picture": "images/products/imgProduct2.jpg",
+      "pro_picture": "images/products/imgProduct2.jpg",
       "Old_price": 30,
       "Price": 25,
     },
     {
       "Name": "Dick Dastardly",
-      "Picture": "images/products/imgProduct3.jpg",
+      "pro_picture": "images/products/imgProduct3.jpg",
       "Old_price": 150,
       "Price": 140,
-    }
+    },
+    {
+      "Name": "Dick Dastardly",
+      "pro_picture": "images/products/imgProduct3.jpg",
+      "Old_price": 150,
+      "Price": 140,
+    },
   ];
 
   @override
@@ -36,7 +42,7 @@ class _ProductsState extends State<Products> {
         itemBuilder: (BuildContext context, int index) {
           return Single_product(
             product_name: product_list[index]['Name'],
-            product_picture: product_list[index]['Picture'],
+            product_picture: product_list[index]['pro_picture'],
             product_old_price: product_list[index]['Old_price'],
             product_price: product_list[index]['Price'],
           );
@@ -59,6 +65,29 @@ class Single_product extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Card(
+      child: Hero(
+        tag: product_name,
+        child: Material(
+          child: InkWell(
+            onTap: () {},
+            child: GridTile(
+              footer: Container(
+                color: Colors.white70,
+                height: 40,
+                child: ListTile(
+                  leading: Text(product_name),
+                ),
+                alignment: Alignment.center,
+              ),
+              child: Image.asset(
+                product_picture,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

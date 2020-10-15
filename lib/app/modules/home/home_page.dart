@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:geekShopping/app/modules/drawer/drawer_widget.dart';
+import 'package:geekShopping/app/modules/home/componets/products.dart';
 import 'componets/horizontal_listview.dart';
 import 'home_controller.dart';
 
@@ -122,6 +123,11 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
               ),
             ),
           ),
+          Container(
+            
+            height: 260,
+            child: Products(),
+          )
         ],
       ),
     );
