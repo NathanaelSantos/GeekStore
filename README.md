@@ -2,13 +2,7 @@
 
 ![](imagesReadme/img1.png)
 
-![](imagesReadme/img2.png)
-
 ![](imagesReadme/img3.png)
-
-![](imagesReadme/video1-Trim.gif)
-
-![](imagesReadme/img4.gif)
 
 A new Flutter project.
 
