@@ -1,6 +1,5 @@
 import 'dart:typed_data';
 
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -16,27 +15,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends ModularState<HomePage, HomeController> {
-  //use 'controller' variable to access controller\\
-
-  final FirebaseStorage storage =
-      FirebaseStorage(
-        storageBucket: 'gs://appgeekstore.appspot.com');
-
+  
   Uint8List imageBytes;
   String errorMsg;
-
-  _HomePageState() {
-    storage
-        .ref()
-        .child('Images/img_1.png')
-        .getData(10000000)
-        .then((data) => setState(() {
-              imageBytes = data;
-            }))
-        .catchError((e) => setState(() {
-              errorMsg = e.error;
-            }));
-  }
 
   @override
   Widget build(BuildContext context) {
