@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geekShopping/app/modules/home/pages/product_details.dart';
 
 class Products extends StatefulWidget {
   @override
@@ -6,7 +7,7 @@ class Products extends StatefulWidget {
 }
 
 class _ProductsState extends State<Products> {
-  var product_list = [
+  var productList = [
     {
       "Name": "Batman",
       "pro_picture": "images/products/imgProduct.jpg",
@@ -26,7 +27,7 @@ class _ProductsState extends State<Products> {
       "Price": 140,
     },
     {
-      "Name": "Dick Dastardly",
+      "Name": "Dick Dastardl",
       "pro_picture": "images/products/imgProduct3.jpg",
       "Old_price": 150,
       "Price": 140,
@@ -36,52 +37,53 @@ class _ProductsState extends State<Products> {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-        itemCount: product_list.length,
+        itemCount: productList.length,
         gridDelegate:
             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (BuildContext context, int index) {
-          return Single_product(
-            product_name: product_list[index]['Name'],
-            product_picture: product_list[index]['pro_picture'],
-            product_old_price: product_list[index]['Old_price'],
-            product_price: product_list[index]['Price'],
+          return SingleProduct(
+            productName: productList[index]['Name'],
+            productPicture: productList[index]['pro_picture'],
+            productOldPrice: productList[index]['Old_price'],
+            productPrice: productList[index]['Price'],
           );
         });
   }
 }
 
-class Single_product extends StatelessWidget {
-  final product_name;
-  final product_picture;
-  final product_old_price;
-  final product_price;
+class SingleProduct extends StatelessWidget {
+  final productName;
+  final productPicture;
+  final productOldPrice;
+  final productPrice;
 
-  Single_product({
-    this.product_name,
-    this.product_picture,
-    this.product_old_price,
-    this.product_price,
+  SingleProduct({
+    this.productName,
+    this.productPicture,
+    this.productOldPrice,
+    this.productPrice,
   });
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: Hero(
-        tag: product_name,
+        tag: productName,
         child: Material(
           child: InkWell(
-            onTap: () {},
+            onTap: ()=> Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => ProductDetails())),
             child: GridTile(
               footer: Container(
                 color: Colors.white70,
                 height: 40,
                 child: ListTile(
-                  leading: Text(product_name),
+                  leading: Text(productName),
                 ),
                 alignment: Alignment.center,
               ),
               child: Image.asset(
-                product_picture,
+                productPicture,
                 fit: BoxFit.cover,
               ),
             ),

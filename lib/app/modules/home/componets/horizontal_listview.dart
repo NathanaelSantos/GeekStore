@@ -17,24 +17,24 @@ class HorizontalList extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           children: <Widget>[
             Category(
-              image_location: 'images/games.png',
-              image_subtitle: 'Games',
+              imageLocation: 'images/games.png',
+              imageSubtitle: 'Games',
             ),
             Category(
-              image_location: 'images/vestuario.png',
-              image_subtitle: 'Clothes',
+              imageLocation: 'images/vestuario.png',
+              imageSubtitle: 'Clothes',
             ),
             Category(
-              image_location: 'images/sneakers.png',
-              image_subtitle: 'Shoes',
+              imageLocation: 'images/sneakers.png',
+              imageSubtitle: 'Shoes',
             ),
             Category(
-              image_location: 'images/headphones.png',
-              image_subtitle: 'Accessories',
+              imageLocation: 'images/headphones.png',
+              imageSubtitle: 'Accessories',
             ),
             Category(
-              image_location: 'images/sword.png',
-              image_subtitle: 'Toys',
+              imageLocation: 'images/sword.png',
+              imageSubtitle: 'Toys',
             ),
           ],
         ),
@@ -44,12 +44,12 @@ class HorizontalList extends StatelessWidget {
 }
 
 class Category extends StatelessWidget {
-  final String image_location;
-  final String image_subtitle;
+  final String imageLocation;
+  final String imageSubtitle;
 
   Category({
-    this.image_location,
-    this.image_subtitle,
+    this.imageLocation,
+    this.imageSubtitle,
   });
 
   @override
@@ -62,14 +62,14 @@ class Category extends StatelessWidget {
           width: 90.0,
           child: ListTile(
             title: Image.asset(
-              image_location,
+              imageLocation,
               width: 100.0,
               height: 50.0,
             ),
             subtitle: Container(
               alignment: Alignment.topCenter,
               child: Text(
-                image_subtitle,
+                imageSubtitle,
                 style: TextStyle(
                     color: Color.fromARGB(241, 255, 000, 065), fontSize: 10),
               ),
